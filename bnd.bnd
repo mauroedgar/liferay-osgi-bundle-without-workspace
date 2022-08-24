@@ -1,0 +1,9 @@
+Bundle-Name: bancobv-users-groups-mapping
+Bundle-SymbolicName: br.com.bv.users.groups.mapping
+Bundle-Version: 1.0.0
+Export-Package: \
+    	br.com.bv.users.groups.mapping,\
+    	br.com.bv.users.groups.mapping.model,\
+    	br.com.bv.users.groups.mapping.portlet,\
+    	br.com.bv.users.groups.mapping.configuration
+-metatype: *

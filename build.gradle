@@ -1,0 +1,31 @@
+buildscript {
+    repositories {
+        maven { url "https://repository-cdn.liferay.com/nexus/content/groups/public" }
+        maven { url "https://repository.liferay.com/nexus/content/groups/public" }
+        maven { url "https://plugins.gradle.org/m2/" }
+    }
+    dependencies {
+        classpath "biz.aQute.bnd:biz.aQute.bnd.gradle:6.3.1"
+//        classpath group: "com.gradle", name: "gradle-enterprise-gradle-plugin", version: "3.1"
+//        classpath group: "com.liferay", name: "com.liferay.gradle.plugins", version: "3.0.1"
+    }
+}
+
+allprojects {
+    repositories {
+        maven { url "https://repository-cdn.liferay.com/nexus/content/groups/public" }
+        maven { url "https://repository.liferay.com/nexus/content/groups/public" }
+        maven { url "https://plugins.gradle.org/m2/" }
+    }
+    apply plugin: 'java'
+    apply plugin: 'groovy'
+    apply plugin: 'maven-publish'
+//    apply plugin: 'com.liferay.plugin'
+    apply plugin: "biz.aQute.bnd.builder"
+}
+
+dependencies {
+    compileOnly group: "com.liferay.portal", name: "release.portal.api", version: "7.3.2-ga3"
+    compileOnly group: "javax.servlet", name: "javax.servlet-api", version: "3.0.1"
+    compileOnly group: "javax.servlet.jsp", name: "jsp-api", version: "2.2"
+}
